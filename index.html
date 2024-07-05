@@ -7,7 +7,7 @@
             font-family: Arial, sans-serif;
             color: #fff;
             text-align: center;
-            padding: 50px;
+            padding: 20px;
             position: relative;
             overflow: hidden;
         }
@@ -25,7 +25,7 @@
         }
 
         h2 {
-            font-size: 48px;
+            font-size: 36px;
             margin-top: -3%;
             margin-bottom: 2%;
             animation: neon 1.5s infinite alternate;
@@ -35,18 +35,20 @@
 
         form {
             background: rgba(0, 0, 0, 0.7);
-            height: 450px;
-            width:650px;
+            padding: 20px;
             border-radius: 10px;
             display: inline-block;
             animation: fadeIn 2s;
             z-index: 1;
-            widt
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
         }
 
         .container {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .player-group {
@@ -73,7 +75,7 @@
 
         input[type="text"],
         input[type="tel"] {
-            width: 80%;
+            width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: none;
@@ -91,6 +93,8 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s;
+            width: 100%;
+            max-width: 200px;
         }
 
         input[type="submit"]:hover {
@@ -134,14 +138,67 @@
                 opacity: 1;
             }
         }
-        .logo{
-          margin-top: 10%;
-          width:30%;
-          height: 20%;
+
+        .logo {
+            width: 30%;
+            height: 20%;
+            margin: 10px 0;
         }
-        .icons{
-          width:90px;
-          height: 75px;
+
+        .icons {
+            width: 70px;
+            height: 70px;
+        }
+
+        .phone-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .phone-group img {
+            margin: 0 10px;
+        }
+
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .player-group {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .logo {
+                width: 50%;
+                height: auto;
+                margin: 10px auto;
+            }
+
+            .icons {
+                width: 50px;
+                height: 50px;
+            }
+
+            input[type="submit"] {
+                padding: 10px 20px;
+                font-size: 16px;
+                width: 80%;
+            }
+
+            .phone-group {
+                flex-direction: column;
+            }
+
+            .phone-group img {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -150,7 +207,7 @@
     <h2>Free Fire Tournament Registration</h2>
     <form action="/submit_registration" method="post">
         <div class="container">
-            <div class="player-group"style="margin-right: -10%;">
+            <div class="player-group">
                 <h3>Player 1</h3>
                 <div class="form-group">
                     <label for="player1">Name:</label>
@@ -160,7 +217,7 @@
                 </div>
             </div>
             <img class="logo" src="logo-removebg-preview.png">
-            <div class="player-group" style="margin-left: -10%;">
+            <div class="player-group">
                 <h3>Player 2</h3>
                 <div class="form-group">
                     <label for="player2">Name:</label>
@@ -170,14 +227,14 @@
                 </div>
             </div>
         </div>
-        <div class="container" >
-            <div ><a style="margin-left: 80px;"><img class="icons"src="youtube.webp"></a></div>
-            <div style="margin-top: 15px;">
+        <div class="phone-group">
+            <a><img class="icons" src="youtube.webp"></a>
+            <div>
               <label for="phone">Phone Number:</label><br>
-              <input style="width: 200px;"type="tel" id="phone" name="phone" required>
+              <input type="tel" id="phone" name="phone" required>
             </div>
-            <div ><a style="margin-right: 80px;"><img class="icons" src="Instagram.png"></a></div>
-          </div>
+            <a><img class="icons" src="Instagram.png"></a>
+        </div>
         <input type="submit" value="Register">
     </form>
 
